@@ -1,0 +1,116 @@
+# PERSON
+- model: life.Person
+  pk: 1
+  fields:
+    first_name: Иван
+    patronymic: Иванович
+    surname: Иванов
+    snils: 123-456-789 01
+    passport: null
+    father: null
+    mother: null
+    birth_date: 1974-01-01
+    gender: ML
+    email: ivan_ivanov@test.com
+    mobile: +7-916-1234-56-78
+- model: life.Person
+  pk: 2
+  fields:
+    first_name: Анна
+    patronymic: Петровна
+    surname: Иванова
+    snils: 123-456-789 02
+    passport: null
+    father: null
+    mother: null
+    birth_date: 1980-02-02
+    gender: FM
+    email: anna_ivanova@test.com
+    mobile: +7-916-7890-56-78
+- model: life.Person
+  pk: 3
+  fields:
+    first_name: Федор
+    patronymic: Иванович
+    surname: Иванов
+    snils: 123-456-789 03
+    passport: null
+    father: 1
+    mother: 2
+    birth_date: 2002-03-03
+    gender: ML
+    email: fiodor_ivanov@test.com
+    mobile: +7-916-7890-34-78
+- model: life.Person
+  pk: 4
+  fields:
+    first_name: Дарья
+    patronymic: Ивановна
+    surname: Иванова
+    snils: 123-456-789 04
+    passport: null
+    father: 1
+    mother: 2
+    birth_date: 2004-04-04
+    gender: FM
+    email: daria_ivanova@test.com
+    mobile: +7-916-7890-34-56
+
+
+# EDUCATION
+- model: life.Education
+  pk: 1
+  fields:
+    name: СШ №1
+    description: Городская средняя школа №1
+    address: Республика Классная, Город Неизвестный, Улица Ленина 3
+- model: life.Education
+  pk: 2
+  fields:
+    name: Гимназия №1
+    description: Городская гимназия №1
+    address: Республика Классная, Город Неизвестный, Улица Весенняя 51
+
+
+# PUPIL
+- model: life.Pupil
+  pk: 1
+  fields:
+    person: 3
+    education: 1
+    start_date: 2008-09-01
+    finish_date: 2014-05-20
+- model: life.Pupil
+  pk: 2
+  fields:
+    person: 3
+    education: 2
+    start_date: 2014-09-01
+    finish_date: null
+- model: life.Pupil
+  pk: 3
+  fields:
+    person: 4
+    education: 2
+    start_date: 2010-09-01
+    finish_date: null
+
+# DOCUMENTS
+
+# EVENTS
+- model: life.Event
+  pk: 1
+  fields:
+    person: 3
+    document: null
+    title: Олимпиада по информатике БМСТУ им Баумана, 1 место
+    description: Олимпиада по информатике БМСТУ им Баумана, 1 место
+    event_date: 2018-02-20
+- model: life.Event
+  pk: 2
+  fields:
+    person: 3
+    document: null
+    title: Конкурс песни и пляски 5-е место
+    description: Конкурс песни и пляски 5-е место
+    event_date: 2016-03-25

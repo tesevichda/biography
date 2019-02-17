@@ -1,0 +1,41 @@
+{% extends 'life/base.html' %}
+
+{% block content %}
+    <div class="person">
+        <h1>{{ person.surname }} {{ person.first_name }} {{ perosn.patronymic }}</h1>
+        <div>
+          <a class="btn btn-light" href="/" class="top-menu">Список</a>
+          <a class="btn btn-light" href="{% url 'event_new' pk=person.pk %}" class="top-menu">Достижение</a>
+          <a class="btn btn-light" href="#" class="top-menu">Образование</a>
+          <a class="btn btn-light" href="{% url 'person_edit' pk=person.pk %}">Изменить</a>
+          <hr />
+        </div>
+        <p>Родился(лась): {{ person.birth_date | date:"d-m-Y" }}</p>
+        <p>СНИЛС: {{ person.snils }}</p>
+        <p>Паспорт: {{ person.passport }}</p>
+        <hr />
+        {% if events %}
+          <h3>Достижения</h3>
+          <hr />
+          {% for event in events %}
+            <h5>{{ event.event_date | date:"d-m-Y" }}: {{ event.title }}</h5>
+            <a href="{% url 'event_edit' pk=person.pk ek=event.pk %}">Изменить</a>
+            <p>{{ event.description }}</p>
+          {% endfor %}
+          <hr />
+        {% endif %}
+        {% if pupils %}
+          <h3>Образование</h3>
+          <hr />
+          {% for pupil in pupils %}
+            <h5>
+              {{ pupil.start_date | date:"d-m-Y" }} -
+              {{ pupil.finish_date | date:"d-m-Y" | default:"Настоящее время"}}:
+              {{ pupil.education.name }}
+            </h5>
+            <a href="#">Изменить</a>
+          {% endfor %}
+          <hr />
+        {% endif %}
+    </div>
+{% endblock %}

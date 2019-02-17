@@ -1,0 +1,10 @@
+{% extends 'life/base.html' %}
+
+{% block content %}
+    <h1>Добавить ученика</h1>
+    <form method="POST" class="person-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-light">Сохранить</button>
+        <button type="button" class="btn btn-light" onclick="history.back()">Отменить</button>
+    </form>
+{% endblock %}
