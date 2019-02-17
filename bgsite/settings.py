@@ -13,7 +13,7 @@ SECRET_KEY = '_g80ert^(!6h91(7@ewz63!6yw1wp-56hhjr_es$^i-l#tt@xn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'alxt.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'tesevichda.pythonanywhere.com']
 
 
 # Application definition
